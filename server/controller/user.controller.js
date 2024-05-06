@@ -162,6 +162,7 @@ const findusers = async (req, res) => {
 
 const userlocation = async (req, res) => {
   const { latitude, longitude, user_id } = req.body;
+  console.log(latitude, longitude, user_id, "");
 
   try {
     const existingLocation = await Location.findOne({ user_id });
@@ -209,30 +210,30 @@ const getboundaryalert = async ({ user_id }) => {
   const Adminid = await usermodel.findOne({ usertype: "admin" });
 
   const admId = Adminid._id;
-  // console.log("admin id: ", admId);
+  console.log("admin id: ", admId);
 
   const adminLandL = await getLocationDetailsBasedOnId(admId);
 
   const user = await usermodel.findOne({ _id: user_id });
-  // console.log(user, "user_id");
+  console.log(user, "user_id");
   const username = user.name;
 
   const userLandL = await getLocationDetailsBasedOnId(user_id);
 
   const boundary = {
     center: { latitude: adminLandL.latitude, longitude: adminLandL.longitude },
-    radius: 1000,
+    radius: 408000,
   };
   console.log(boundary, "boundary");
   const userLocation = {
     latitude: userLandL.latitude,
     longitude: userLandL.longitude,
   };
-  // console.log("userLoaction", userLocation);
+  console.log("userLoaction", userLocation);
 
   const distance = calculateDistance(boundary.center, userLocation);
 
-  // console.log(distance, "distance", boundary.radius);
+  console.log(distance, "distance", boundary.radius);
   if (distance <= boundary.radius) {
     // User is within the boundary
     return { message: ` ${username} is within the boundary.` };

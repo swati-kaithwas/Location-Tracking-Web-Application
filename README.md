@@ -11,12 +11,12 @@ This is a Location Tracking Web Application developed using Node.js for the back
 - **Interactive Maps**: Provides interactive maps for users to visualize their locations and movements.
 
 ## Technologies Used
-- **Backend**: Node.js, Express.js, MongoDB (or any other database of choice)
-- **Frontend**: React.js, Mapbox (or any other mapping library of choice)
+- **Backend**: Node.js, Express.js, MongoDB 
+- **Frontend**: React.js, leaf-let
 - **Authentication**: JSON Web Tokens (JWT)
-- **Database**: MongoDB (or any other database of choice)
-- **API Communication**: Axios (or any other HTTP client of choice)
-- **Styling**: CSS,
+- **Database**: MongoDB 
+- **API Communication**: Axios 
+- **Styling**:Tailwind CSS,
 ## Installation
 1. **Clone the Repository**: `git clone https://github.com/your-username/Location-Tracking-Web-Application.git`
 2. **Install Backend Dependencies**: `cd Location-Tracking-Web-Application/server && npm install`

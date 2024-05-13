@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const validationSchema = Yup.object().shape({
@@ -38,12 +39,23 @@ const Register = () => {
         if (!response.ok) {
           const errorData = await response.json();
           console.error("Registration failed:", errorData.message);
+          Swal.fire({
+            position: "top-end",
+            title: errorData.message,
+            showConfirmButton: false,
+            timer: 1500,
+          });
           return;
         }
 
         const responseData = await response.json();
         console.log("Registration successful:", responseData);
-
+        Swal.fire({
+          position: "top-end",
+          title: responseData.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
         window.location.href = "/login";
       } catch (error) {
         console.error("Registration failed:", error.message);

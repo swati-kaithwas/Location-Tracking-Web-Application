@@ -40,6 +40,12 @@ const Login = () => {
         }
       } catch (error) {
         console.error("Login error:", error.response.data);
+        Swal.fire({
+          position: "top-end",
+          title: error.response.data.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
     },
   });

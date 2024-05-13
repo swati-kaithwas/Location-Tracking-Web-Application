@@ -19,10 +19,10 @@ This is a Location Tracking Web Application developed using Node.js for the back
 - **Styling**: CSS,
 ## Installation
 1. **Clone the Repository**: `git clone https://github.com/your-username/Location-Tracking-Web-Application.git`
-2. **Install Backend Dependencies**: `cd Location-Tracking-Web-Application/backend && npm install`
-3. **Install Frontend Dependencies**: `cd ../frontend && npm install`
+2. **Install Backend Dependencies**: `cd Location-Tracking-Web-Application/server && npm install`
+3. **Install Frontend Dependencies**: `cd ../client && npm install`
 4. **Start Backend Server**: `cd ../backend && npm run dev`
-5. **Start Frontend Development Server**: `cd ../frontend && npm start`
+5. **Start Frontend Development Server**: `cd ../client && npm start`
 6. **Access the Application**: Visit `http://localhost:30001` in your web browser.
 
 login credentials for Admin 

@@ -10,7 +10,6 @@ import PrivateRoute from "./PrivateRoute";
 // import {io} from "socket.io-client";
 //  const socket = io("http://localhost:3000");
 
-
 function App() {
   const usertype = localStorage.getItem("usertype");
   return (
@@ -33,9 +32,24 @@ function App() {
           </PrivateRoute>
         }
       />
-      <Route exact path="/dashboard" element={<Dashboard />} />
-      <Route exact path="/admin" element={<AdminDashboard />} />
-      {/* <Route exact path="/location" element={<GetLocation />} /> */}
+      <Route
+        exact
+        path="/dashboard"
+        element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        exact
+        path="/admin"
+        element={
+          <PrivateRoute>
+            <AdminDashboard />
+          </PrivateRoute>
+        }
+      />
     </Routes>
   );
 }
